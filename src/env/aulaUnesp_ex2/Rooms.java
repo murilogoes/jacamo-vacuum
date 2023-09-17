@@ -15,11 +15,11 @@ public class Rooms extends Artifact {
     void init(int numberOfRooms) {
 
         robotAt[0] = 0;
-        robotAt[1] = 29;
+        robotAt[1] = 9;
 
         rooms = new boolean[numberOfRooms];
-        defineObsProperty("at0", 0);
-        defineObsProperty("at1", 29);
+        defineObsProperty("at0", robotAt[0]);
+        defineObsProperty("at1", robotAt[1]);
 
         for (int i = 0; i < numberOfRooms; i++)
             rooms[i] = false;
@@ -38,15 +38,8 @@ public class Rooms extends Artifact {
     }
 
     @OPERATION
-    void forneceInfo() {
-        ObsProperty prop = getObsProperty("at");
-        signal("teste");
-    }
-
-    @OPERATION
     void goLeft(int i) {
-        forneceInfo();
-        if (robotAt[i] - 1 > 0) {
+        if (robotAt[i] - 1 >= 0) {
             robotAt[i]--;
 
             getObsProperty("at" + String.valueOf(i)).updateValue(robotAt[i]);

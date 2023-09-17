@@ -10,7 +10,7 @@ direcao(right).
 
 /* Plans */
 
-+!start : true <- makeArtifact("rooms", "aulaUnesp_ex2.Rooms", [30], ID);
++!start : true <- makeArtifact("rooms", "aulaUnesp_ex2.Rooms", [10], ID);
                   focus(ID);
                   !searchTrash.
 
